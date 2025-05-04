@@ -11,8 +11,7 @@ export default function Home() {
 
   return (
     <main className="bg-gradient-to-br from-purple-600 via-pink-600 to-yellow-600 w-screen min-h-screen flex justify-center overflow-hidden">
-      <div className="relative rounded-3xl w-[400px] h-[800px] my-8 bg-white overflow-hidden">
-        {/* <div className="relative rounded-3xl w-[400px] h-[800px] bg-white overflow-hidden p-3"> */}
+      <div className="relative sm:rounded-3xl w-full h-screen sm:w-[400px] sm:h-[800px] my-0 sm:my-8 bg-white overflow-hidden">
         <div className="flex justify-between mb-3 items-center px-3 pt-3">
           <span className="font-semibold">
             {new Date()
