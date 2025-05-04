@@ -10,9 +10,10 @@ export default function Home() {
   const { activeStoryIndex } = useAppContext();
 
   return (
-    <main className="bg-gradient-to-br from-purple-600 via-pink-600 to-yellow-600 w-screen min-h-screen flex justify-center items-center overflow-hidden">
-      <div className="relative rounded-3xl w-[400px] h-[800px] my-5 bg-white overflow-hidden p-3">
-        <div className="flex justify-between mb-3 items-center">
+    <main className="bg-gradient-to-br from-purple-600 via-pink-600 to-yellow-600 w-screen min-h-screen flex justify-center overflow-hidden">
+      <div className="relative rounded-3xl w-[400px] h-[800px] my-8 bg-white overflow-hidden">
+        {/* <div className="relative rounded-3xl w-[400px] h-[800px] bg-white overflow-hidden p-3"> */}
+        <div className="flex justify-between mb-3 items-center px-3 pt-3">
           <span className="font-semibold">
             {new Date()
               .toLocaleTimeString([], {
@@ -35,6 +36,7 @@ export default function Home() {
           src={"/instagram.png"}
           width={100}
           height={100}
+          className="ml-3"
         />
         <StoriesList />
         {activeStoryIndex !== null && <StoryViewModal />}

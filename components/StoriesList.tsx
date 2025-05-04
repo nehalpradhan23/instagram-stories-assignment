@@ -51,7 +51,7 @@ const StoriesList = () => {
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
-      className="flex gap-4 overflow-x-auto py-2 hide-scrollbar"
+      className="flex gap-4 overflow-x-auto p-3 hide-scrollbar"
     >
       {allStoriesList.map((item, index) => (
         <div
