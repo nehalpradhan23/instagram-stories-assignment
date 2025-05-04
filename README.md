@@ -19,6 +19,7 @@ Install with npm
 
 ```bash
   npm install
+  npm run dev
 ```
     
 ## Features and Design
