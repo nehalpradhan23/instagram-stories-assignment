@@ -60,7 +60,7 @@ const StoriesList = () => {
           onClick={() => viewStory(item.id)}
         >
           <div
-            className={`w-20 aspect-square p-[2px] rounded-full 
+            className={`w-[70px] aspect-square p-[2px] rounded-full 
           ${
             item.viewed
               ? "bg-gray-300"
