@@ -53,33 +53,6 @@ export const AppContextProvider = ({
 
   const handleCloseStory = () => setActiveStoryIndex(null);
 
-  // const handleNextStory = () => {
-  //   // close if last story
-  //   // if (activeStoryIndex === allStoriesList.length + 2) {
-  //   //   handleCloseStory();
-  //   //   return;
-  //   // }
-  //   setActiveStoryIndex((prev) =>
-  //     prev !== null && prev < allStoriesList.length - 1 ? prev + 1 : null
-  //   );
-  //   if (activeStoryIndex === null) {
-  //     handleCloseStory();
-  //   }
-  // };
-
-  // const handlePrevStory = () => {
-  //   // if (activeStoryIndex === 1) {
-  //   //   handleCloseStory();
-  //   //   return;
-  //   // }
-  //   setActiveStoryIndex((prev) =>
-  //     prev !== null && prev > 0 ? prev - 1 : null
-  //   );
-  //   if (activeStoryIndex === null) {
-  //     handleCloseStory();
-  //   }
-  // };
-
   const handleNextStory = () => {
     if (activeStoryIndex === null) return;
 
