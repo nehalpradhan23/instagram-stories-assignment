@@ -1,12 +1,17 @@
+"use client";
 import StoriesList from "@/components/StoriesList";
+import StoryViewModal from "@/components/StoryViewModal";
+import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { FaBatteryFull, FaWifi } from "react-icons/fa6";
 import { TbAntennaBars5 } from "react-icons/tb";
 
 export default function Home() {
+  const { activeStoryIndex } = useAppContext();
+
   return (
     <main className="bg-gradient-to-br from-purple-600 via-pink-600 to-yellow-600 w-screen min-h-screen flex justify-center items-center overflow-hidden">
-      <div className="rounded-3xl w-[400px] h-[700px] my-20 bg-white overflow-hidden p-3">
+      <div className="relative rounded-3xl w-[400px] h-[700px] my-20 bg-white overflow-hidden p-3">
         <div className="flex justify-between mb-3 items-center">
           <span className="font-semibold">1:00</span>
           <div className="flex gap-1 text-lg">
@@ -22,6 +27,7 @@ export default function Home() {
           height={100}
         />
         <StoriesList />
+        {activeStoryIndex !== null && <StoryViewModal />}
       </div>
     </main>
   );

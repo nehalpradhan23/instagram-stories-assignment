@@ -1,14 +1,28 @@
 "use client";
-import { imageData } from "@/data/image";
+import { useAppContext } from "@/context/AppContext";
 import React from "react";
 
 const StoriesList = () => {
-  const viewStory = () => {};
+  const { allStoriesList, setAllStoriesList, setActiveStoryIndex } =
+    useAppContext();
+
+  const viewStory = (id: number) => {
+    setAllStoriesList((prev) =>
+      prev.map((story) =>
+        story.id === id ? { ...story, viewed: true } : story
+      )
+    );
+    setActiveStoryIndex(id);
+  };
 
   return (
     <div className="flex gap-4 overflow-x-auto py-2 hide-scrollbar">
-      {imageData.map((item, index) => (
-        <div key={index} className="cursor-pointer" onClick={() => viewStory()}>
+      {allStoriesList.map((item, index) => (
+        <div
+          key={index}
+          className="cursor-pointer"
+          onClick={() => viewStory(item.id)}
+        >
           <div
             className={`w-20 aspect-square p-[2px] rounded-full 
           ${
