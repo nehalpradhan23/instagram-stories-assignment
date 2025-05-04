@@ -97,6 +97,17 @@ export const AppContextProvider = ({
     }
   };
 
+  // auto advance to next image
+  useEffect(() => {
+    if (activeStoryIndex === null) return;
+
+    const timeout = setTimeout(() => {
+      handleNextStory();
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [activeStoryIndex, allStoriesList]);
+
   useEffect(() => {
     setAllStoriesList(imageData);
   }, []);
