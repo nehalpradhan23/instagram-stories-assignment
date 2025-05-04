@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Instagram Stories feature
 
-First, run the development server:
+A simplified version of Instagram Stories feature allowing users to view a series of stories.
+
+
+## Deployed Link
+
+https://instagram-stories-assignment-kappa.vercel.app/
+
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:nehalpradhan23/instagram-stories-assignment.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install with npm
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
+    
+## Features and Design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Horizontal stories list
+- Border color change to notify viewed vs story that is not viewed yet
+- Stories screen navigation previous or next with screen tap
+- Auto advance after 5 seconds along with progress bar
 
-## Learn More
+### Component Modularity
 
-To learn more about Next.js, take a look at the following resources:
+- I split the app into small, focused components (StoriesList, StoryViewModal, etc.) to ensure maintainability and reusability. This makes the codebase easier to scale as new features (like videos or story reactions) can be added without major refactoring.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Global State with Context API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- I used React’s Context API with TypeScript to manage shared state across components (e.g., current story, viewed status). This avoids prop-drilling and ensures consistent state access while remaining lightweight—ideal for small to mid-sized apps.
 
-## Deploy on Vercel
+### Type Safety for Future Growth
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All shared data structures and props are strictly typed.
